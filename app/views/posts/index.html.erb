@@ -1,0 +1,29 @@
+
+
+<div class="posts">
+<div class="postWrapper">
+  <div class="post">
+    <%= link_to 'New Post', new_post_path, :class => "mainActionButton" %>
+  </div>
+</div>
+
+  <% @posts.each do |post| %>
+    <div class="postWrapper">
+    <div class="post">
+      <h2 class="title">
+        <%= post.title %>
+      </h2>
+      <div class="postContent">
+        <%= post.content.html_safe %>
+      </div>
+      <div class="twoButtons">
+        <div class="buttonContainer1"><%= link_to 'Edit', edit_post_path(post), :class => "mainActionButton" %></div>
+        <div class="buttonContainer2"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "negActionButton" %></div>
+      </div>
+    </div>
+    </div>
+  <% end %>
+</div>
+
+
+

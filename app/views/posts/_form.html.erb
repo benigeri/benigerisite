@@ -1,0 +1,35 @@
+<!-- For editor -->
+
+<link rel="stylesheet" type="text/css" href="/assets/bootstrap-wysihtml5.css"></link>
+<link rel="stylesheet" type="text/css" href="/assets/bootstrap.min.css"></link>
+<script src="/assets/wysihtml5-0.3.0.js"></script>
+<script src="/assets/bootstrap.min.js"></script>
+<script src="/assets/bootstrap-wysihtml5.js"></script>
+
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :title, :placeholder => "Post title..." %>
+  </div>
+  <div class="field editorContainer">
+    <%= f.text_area :content, :id => "contentEditArea", :placeholder => "Post content..." %>
+    <script type="text/javascript">
+      $('#contentEditArea').wysihtml5();
+    </script>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+    <%= link_to 'Back', posts_path, :class => "backButton" %>
+  </div>
+<% end %>

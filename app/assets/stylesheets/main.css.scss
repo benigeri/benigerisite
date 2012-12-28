@@ -1,0 +1,605 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$white: #FFFFFF;
+$black: #000000;
+$background: #F5F5F5;
+$border: #E3E3E3;
+$borderHover: #D3D3D3;
+$textGrey1: #999999;
+$textGrey2: #585C60;
+$textGrey3: #4D4D4D;
+$buttonBlue: #00A2FF;
+$buttonBlueHover: #0092EF;
+$buttonBlueActive: #0082DF;
+$buttonGrey: #c5c5c5;
+$buttonGreyHover: #b5b5b5;
+$buttonGreyActive: #a5a5a5;
+$buttonRed: #F52E2C;
+$buttonRedHover: #E51E1C;
+$buttonRedActive: #D50E0C;
+$smallSpacing: 15px;
+$largeSpacing: 50px;
+html {
+
+  /*background: url(/assets/woven.png) repeat #222;*/
+  background: $white;
+}
+
+body {
+  background-color: $white;
+  font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  position: relative;
+  color: $black;
+  padding: 0px;
+}
+.invisible {
+  display: none;
+}
+
+header {
+  width: 25%;
+  background: $background;
+  position: fixed;
+  margin: 0px;
+  padding: 0px;
+  min-height: 100%;
+  height: 2000px;
+  top: 0px;
+  bottom: 0px;
+  border-right: 1px solid $border;
+  left: 0px;
+
+  .wrapper {
+    width: 75%;
+    clear: both;
+    margin: auto;
+    max-width: 280px;
+  }
+
+  h1 {
+    margin-top: 50px;
+    font-size: 38px;
+    font-weight: 700;
+    font-family: 'Source Sans Pro';
+    display: block;
+    width: auto;
+
+  }
+  ul {
+    margin-top: 50px;
+    list-style: none;
+    padding: 0px;
+    li {
+      a {
+        text-decoration: none;
+        color: $textGrey1;
+        font-weight: 200;
+        line-height: 28px;
+        padding-left: 3px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+
+.content {
+  margin-left: 25%;
+  max-height: 100%;
+/*  max-width: 700px;*/
+
+  .postWrapper {
+    border-bottom: 1px solid $border;
+    .post,  {
+      padding: $largeSpacing;
+      max-width: 700px;
+
+
+      .postContent{
+        margin: 0px;
+      }
+    }
+  }
+}
+
+
+
+.content, #contentEditArea {
+  /*font-family: 'Helvetica Neue';*/
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 200;
+  color: $textGrey3;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+  }
+  a:hover {
+    background: $buttonBlue;
+    color: $white;
+  }
+
+  h2 {
+    font-size: 48px;
+    font-weight: 700;
+    font-family: "Source Sans Pro", 'Helvetica Neue';
+    margin-bottom: $largeSpacing;
+    margin-top: 0px;
+    color: $black;
+    line-height: 45px;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    border: 1px solid $border;
+  }
+}
+
+#contentEditArea {
+  width: 100%;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+  #post_title {
+    font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+  }
+}
+
+.avgrund-popup {
+  .popupHeader {
+    background-color: $background;
+    border-bottom: 1px solid $border;
+    padding: 10px 20px;
+    font-family: "Source Sans Pro";
+    color: $textGrey1;
+    font-size: 26px;
+    font-weight: 500;
+
+    h3 {
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+  .popupInput {
+    padding: 10px 20px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+
+  .popupButtonContainer {
+    padding: 10px 20px;
+    margin: 10px 0px;
+    overflow: hidden;
+
+    .popupButton {
+      padding: 10px;
+      color: $white;
+      font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      text-align: center;
+      width: 150px;
+      text-decoration: none;
+    }
+    .close {
+      float: left;
+      background: $buttonGrey;
+    }
+
+    .close:hover {
+      background: $buttonGreyHover;
+    }
+
+    .close:active {
+      background: $buttonGreyActive;
+    }
+
+    .insert {
+      float: right;
+      background: $buttonBlue;
+    }
+
+    .insert:hover {
+      background: $buttonBlueHover;
+    }
+
+    .insert:active {
+      background: $buttonBlueActive;
+    }
+  }
+  .popupButtonContainer {
+    padding-top: 0px;
+  }
+}
+
+.editorContainer {
+  margin-top: 20px;
+    font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+  ul.toolbar {
+    list-style-type: none;
+    padding: 0px;
+    margin: 10px 0px;
+
+    li {
+      position: relative;
+      margin: 0px 10px 10px 0px;
+      margin-right: 10px;
+
+      a.miniButton {
+        background: $buttonGrey;
+        padding: 10px;
+        color: $white;
+        font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+        display: block;
+        min-width: 27px;
+      }
+
+      a.miniButton:hover {
+        background: $buttonGreyHover;
+      }
+
+      a.miniButton:active, a.wysihtml5-command-active {
+        background: $buttonGreyActive;
+      }
+    }
+
+    a.dropdown-toggle {
+      span.current-font {
+        padding-right: 27px;
+      }
+
+      span.entypo {
+        font-size: 31px;
+        padding: 0px;
+        margin: 0px;
+        position: absolute;
+        bottom: 8px;
+        right: 10px;
+      }
+    }
+
+    ul.dropdown-menu {
+      display: none;
+      position: absolute;
+      list-style: none;
+      top: 100%;
+      z-index: 100;
+      padding: 0px;
+      margin-top: 0px;
+      border: 1px solid $border;
+      border-top: none;
+
+      li {
+        margin: 0px;
+          a {
+          margin: 0px;
+          padding: 10px;
+          background: white;
+          color: $textGrey1;
+          font-size: 16px;
+          display: block;
+          padding-right: 35px;
+
+        }
+
+        a:hover {
+          background: $border;
+        }
+
+        a:active {
+          background: $borderHover;
+        }
+      }
+    }
+
+    li:hover > ul {
+      display: block;
+    }
+  }
+
+  #contentEditArea {
+    box-sizing: border-box;
+    border: 1px solid $border;
+    padding: 10px;
+    box-shadow: none;
+  }
+
+  #contentEditArea:focus {
+    border: 1px solid $buttonBlue;
+    outline: none;
+  }
+  #contentEditArea:active {
+    border: 1px solid $buttonBlue;
+    outline: none;
+  }
+  #contentEditArea:click {
+    border: 1px solid $buttonBlue;
+    outline: none;
+  }
+
+
+}
+
+.entypo {
+  font-family: 'entyporegular';
+}
+
+input {
+  width: 100%;
+  border: 1px solid $border;
+  padding: 10px;
+  box-sizing: border-box;
+;
+  color: #4D4D4D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+input:focus{
+  outline: none;
+  border: 1px solid $buttonBlue;
+}
+
+input[type=submit], a.mainActionButton {
+  padding: 10px;
+  background: $buttonBlue;
+  border: none;
+  color: $white;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  display: block;
+  box-sizing:border-box;
+}
+
+input[type=submit] {
+  margin-top: 20px;
+}
+input[type=submit]:hover, a.mainActionButton:hover {
+  background: $buttonBlueHover;
+}
+
+input[type=submit]:active, a.mainActionButton:active {
+  background: $buttonBlueActive;
+}
+
+form {
+  .formInput {
+    margin-bottom: 20px;
+  }
+  input[type='checkbox'] {
+    width: auto;
+    display: none;
+  }
+
+  input[type='checkbox']+ label {
+    background: $buttonGrey;
+    padding: 10px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+
+  }
+  input[type='checkbox']+ label:hover {
+    background: $buttonGreyHover;
+  }
+
+  input[type='checkbox']:checked + label {
+    background: $buttonGreyActive;
+  }
+
+  input[type='checkbox']:checked + label:hover {
+    background: $buttonGreyHover;
+  }
+
+}
+
+a.backButton {
+  padding: 10px;
+  background: $buttonGrey;
+  border: none;
+  margin-top: 20px;
+  color: $white;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+a.backButton:hover {
+  background: $buttonGreyHover;
+}
+
+a.backButton:active {
+  background: $buttonGreyActive;
+}
+
+div.twoButtons {
+  font-size: 0px;
+  padding: 0px;
+  margin-top: $largeSpacing;
+  div[class^="buttonContainer"] {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    a {
+      font-size: 20px;
+      display: block;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      box-sizing: border-box;
+      color: white;
+    }
+
+    a.mainActionButton {
+      background: $buttonBlue;
+    }
+
+    a.mainActionButton:hover {
+      background: $buttonBlueHover;
+    }
+
+    a.mainActionButton:active {
+      background: $buttonBlueActive;
+    }
+
+    a.negActionButton {
+      background: $buttonRed;
+    }
+
+    a.negActionButton:hover {
+      background: $buttonRedHover
+    }
+
+    a.negActionButton:active {
+      background: $buttonRedActive;
+    }
+  }
+
+  div.buttonContainer1 {
+    padding-right: 10px;
+  }
+
+  div.buttonContainer2 {
+    padding-left: 10px;
+  }
+}
+.notifications {
+  width: 100%;
+  box-sizing:border-box;
+  padding: $largeSpacing;
+  border-bottom: 1px solid $border;
+
+  .notice, .alert {
+    display: block;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    color:white;
+  }
+
+  .notice {
+    background: $buttonGrey;
+  }
+
+  .alert {
+    background: $buttonRed;
+  }
+}
+
+@media all and (max-width: 768px) {
+
+
+  header {
+
+    width: auto;
+    min-height: 0px;
+    position: relative;
+    bottom: auto;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid $border;
+    padding: 20px 0px;
+    /*top: 0px;*/
+    /*bottom: 0px;*/
+
+
+    .wrapper {
+      max-width: none;
+      width: auto;
+      margin: auto;
+    }
+
+    h1 {
+      margin: 0px;
+      text-align: center;
+    }
+    ul {
+      position: relative;
+      overflow: hidden;
+      width: 90%;
+      margin: auto;
+      margin-top: 20px;
+      li {
+        clear: none;
+        float: none;
+        display: inline-block;
+        width: 22%;
+        float: left;
+        margin-right: 4%;
+        a {
+          width: auto;
+          display: inline-block;
+          width: 20%;
+          box-sizing: border-box;
+          margin: 0px;
+        }
+      }
+      li:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .content {
+    margin: 0px;
+  }
+}
+
+@media all and (max-width: 512px) {
+ header {
+    h1 {
+      font-size: 30px;
+    }
+    ul {
+      li {
+        a.mainActionButton {
+          font-size: 15px;
+          padding: 5px 10px;
+        }
+      }
+    }
+  }
+
+  .content{ 
+    .postWrapper{
+      .post {
+        padding: $smallSpacing;
+      }
+    }
+  }
+  .content, #contentEditArea {
+    h2 {
+      margin-bottom: $smallSpacing;
+      font-size: 36px;
+      line-height: 38px;
+    }
+  }
+
+  div.twoButtons {
+    margin-top: $smallSpacing;
+  }
+
+
+
+}

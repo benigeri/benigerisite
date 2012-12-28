@@ -1,0 +1,14 @@
+<div class="posts">
+  <% @posts.each do |post| %>
+    <div class="postWrapper">
+      <div class="post">
+        <h2 class="title">
+          <%= post.title %>
+        </h2>
+        <div class="postContent">
+          <%= post.content.html_safe %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
