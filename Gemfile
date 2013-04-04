@@ -23,7 +23,6 @@ end
 gem 'jquery-rails'
 
 gem 'devise'
-gem 'formatize'
 gem 'BlueCloth'
 
 # To use ActiveModel has_secure_password
