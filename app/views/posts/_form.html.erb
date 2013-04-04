@@ -1,12 +1,3 @@
-<!-- For editor -->
-
-<link rel="stylesheet" type="text/css" href="/assets/bootstrap-wysihtml5.css"></link>
-<!-- <link rel="stylesheet" type="text/css" href="/assets/bootstrap.min.css"></link>
- -->
- <script src="/assets/wysihtml5-0.3.0.js"></script>
-<!-- <script src="/assets/bootstrap.min.js"></script> -->
-<script src="/assets/bootstrap-wysihtml5.js"></script>
-
 <script type="text/javascript">
 $('html').css('background', "url(/assets/woven.png) repeat #222");
 </script>
@@ -29,9 +20,6 @@ $('html').css('background', "url(/assets/woven.png) repeat #222");
   </div>
   <div class="field editorContainer">
     <%= f.text_area :content, :id => "contentEditArea", :placeholder => "Post content..." %>
-    <script type="text/javascript">
-      $('#contentEditArea').wysihtml5();
-    </script>
   </div>
   <div class="actions">
     <%= f.submit %>
