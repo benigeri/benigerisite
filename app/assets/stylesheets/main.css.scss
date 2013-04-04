@@ -95,19 +95,9 @@ header {
     .post,  {
       padding: $largeSpacing;
       max-width: 700px;
-
-
-      .postContent{
-        margin: 0px;
-      }
     }
   }
-}
 
-
-
-.content, #contentEditArea {
-  /*font-family: 'Helvetica Neue';*/
   font-size: 18px;
   line-height: 27px;
   font-weight: 200;
@@ -115,7 +105,7 @@ header {
 
   a {
     text-decoration: none;
-    color: inherit;
+    color: %buttonBlue;
     font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
   }
@@ -124,30 +114,22 @@ header {
     color: $white;
   }
 
-  h2 {
-    font-size: 48px;
-    font-weight: 700;
-    font-family: "Source Sans Pro", 'Helvetica Neue';
-    margin-bottom: $largeSpacing;
-    margin-top: 0px;
-    color: $black;
-    line-height: 45px;
+  .post {
+    h2.title {
+      font-size: 48px;
+      font-weight: 700;
+      font-family: "Source Sans Pro", 'Helvetica Neue';
+      margin-bottom: $largeSpacing;
+      margin-top: 0px;
+      color: $black;
+      line-height: 45px;
+    }
   }
 
   img {
     display: block;
     margin: auto;
     max-width: 100%;
-  }
-}
-
-#contentEditArea {
-  width: 100%;
-  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-
-  #post_title {
-    font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-
   }
 }
 
@@ -218,123 +200,19 @@ header {
   }
 }
 
-.editorContainer {
-  margin-top: 20px;
-    font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-
-  ul.toolbar {
-    list-style-type: none;
-    padding: 0px;
-    margin: 10px 0px;
-
-    li {
-      position: relative;
-      margin: 0px 10px 10px 0px;
-      margin-right: 10px;
-
-      a.miniButton {
-        background: $buttonGrey;
-        padding: 10px;
-        color: $white;
-        font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        text-align: center;
-        display: block;
-        min-width: 27px;
-      }
-
-      a.miniButton:hover {
-        background: $buttonGreyHover;
-      }
-
-      a.miniButton:active, a.wysihtml5-command-active {
-        background: $buttonGreyActive;
-      }
-    }
-
-    a.dropdown-toggle {
-      span.current-font {
-        padding-right: 27px;
-      }
-
-      span.entypo {
-        font-size: 31px;
-        padding: 0px;
-        margin: 0px;
-        position: absolute;
-        bottom: 8px;
-        right: 10px;
-      }
-    }
-
-    ul.dropdown-menu {
-      display: none;
-      position: absolute;
-      list-style: none;
-      top: 100%;
-      z-index: 100;
-      padding: 0px;
-      margin-top: 0px;
-      border: 1px solid $border;
-      border-top: none;
-
-      li {
-        margin: 0px;
-          a {
-          margin: 0px;
-          padding: 10px;
-          background: white;
-          color: $textGrey1;
-          font-size: 16px;
-          display: block;
-          padding-right: 35px;
-
-        }
-
-        a:hover {
-          background: $border;
-        }
-
-        a:active {
-          background: $borderHover;
-        }
-      }
-    }
-
-    li:hover > ul {
-      display: block;
-    }
-  }
-
-  #contentEditArea {
-    box-sizing: border-box;
-    border: 1px solid $border;
-    padding: 10px;
-    box-shadow: none;
-  }
-
-  #contentEditArea:focus {
-    border: 1px solid $buttonBlue;
-    outline: none;
-  }
-  #contentEditArea:active {
-    border: 1px solid $buttonBlue;
-    outline: none;
-  }
-  #contentEditArea:click {
-    border: 1px solid $buttonBlue;
-    outline: none;
-  }
-
-
-}
-
 .entypo {
   font-family: 'entyporegular';
 }
 
-input {
+/***********************************
+ ***********************************
+          
+          Forms
+
+ ***********************************
+ **********************************/
+
+input, textarea {
   width: 100%;
   border: 1px solid $border;
   padding: 10px;
@@ -345,9 +223,13 @@ input {
   font-weight: 300;
 }
 
-input:focus{
+input:focus, textarea:focus{
   outline: none;
   border: 1px solid $buttonBlue;
+}
+
+textarea {
+  margin-top: 20px;
 }
 
 input[type=submit], a.mainActionButton {
@@ -408,6 +290,14 @@ form {
   }
 
 }
+
+/***********************************
+ ***********************************
+          
+          Buttons
+
+ ***********************************
+ **********************************/
 
 a.backButton {
   padding: 10px;
@@ -484,12 +374,26 @@ div.twoButtons {
     padding-left: 10px;
   }
 }
-.notifications {
+
+/***********************************
+ ***********************************
+          
+          Notifications
+
+ ***********************************
+ **********************************/
+
+.notificationsContainer {
   width: 100%;
   box-sizing:border-box;
   padding: $largeSpacing;
   border-bottom: 1px solid $border;
 
+}
+
+.notifications {
+  
+  max-width: 700px;
   .notice, .alert {
     display: block;
     box-sizing: border-box;
@@ -506,6 +410,57 @@ div.twoButtons {
     background: $buttonRed;
   }
 }
+
+/***********************************
+ ***********************************
+          
+          POST CONTENT
+
+ ***********************************
+ **********************************/
+
+.postContent{
+  margin: 0px;
+
+  h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro';
+  }
+
+  h1 {
+    line-height: 32px;
+    font-size: 30px;  
+  }
+
+  h2 {
+    line-height: 20px;
+    font-size: 20px;  
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  pre code {
+    background: $background;
+    display: block;
+    border: 1px solid $border;
+    padding: 15px;
+  }
+  code {
+    box-sizing: border-box;
+    font-family: 'Source Code Pro';
+    color: $textGrey3;
+  }
+
+}
+
+/***********************************
+ ***********************************
+          
+          Responsive
+
+ ***********************************
+ **********************************/
 
 @media all and (max-width: 768px) {
 
@@ -560,7 +515,9 @@ div.twoButtons {
       }
     }
   }
-
+  .notifications {
+    width: 100%;
+  }
   .content {
     margin: 0px;
   }
@@ -595,11 +552,10 @@ div.twoButtons {
       line-height: 38px;
     }
   }
-
+  .notifications {
+    width: 100%;
+  }
   div.twoButtons {
     margin-top: $smallSpacing;
   }
-
-
-
 }

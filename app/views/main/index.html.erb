@@ -6,7 +6,7 @@
           <%= post.title %>
         </h2>
         <div class="postContent">
-          <%= post.content.html_safe %>
+          <%=  BlueCloth.new(post.content).to_html.html_safe %>
         </div>
       </div>
     </div>

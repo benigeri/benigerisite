@@ -32,13 +32,15 @@ WebFontConfig = { fontdeck: { id: '27778' } };
   </div>
   <div class="content">
     <% if notice || alert %>
-    <div class="notifications">
-      <% if notice %>
-        <div class="notice"><%= notice %></div>
-      <% end %>
-      <% if alert %>
-        <div class="alert"><%= alert %></div>
-      <% end %>
+    <div class="notificationsContainer">
+      <div class="notifications">
+        <% if notice %>
+          <div class="notice"><%= notice %></div>
+        <% end %>
+        <% if alert %>
+          <div class="alert"><%= alert %></div>
+        <% end %>
+      </div>
     </div>
   <% end %>
   <%= yield %>
