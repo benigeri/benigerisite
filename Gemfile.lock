@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    BlueCloth (1.0.1)
     RedCloth (4.2.9)
     actionmailer (3.2.8)
       actionpack (= 3.2.8)
@@ -119,7 +118,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  BlueCloth
   coffee-rails (~> 3.2.1)
   devise
   formatize
