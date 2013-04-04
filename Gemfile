@@ -13,5 +13,5 @@ end
 gem 'jquery-rails'
 
 gem 'devise'
-gem 'BlueCloth'
+gem 'bluecloth'
 
