@@ -22,8 +22,6 @@ $buttonRedActive: #D50E0C;
 $smallSpacing: 15px;
 $largeSpacing: 50px;
 html {
-
-  /*background: url(/assets/woven.png) repeat #222;*/
   background: $white;
 }
 
@@ -449,7 +447,7 @@ div.twoButtons {
   code {
     font-size: 16px;
     box-sizing: border-box;
-    font-family: 'Source Code Pro';
+    font-family: Courier New, Courier, Monospace;
     color: $textGrey3;
   }
 
