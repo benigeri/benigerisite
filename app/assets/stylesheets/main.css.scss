@@ -21,13 +21,16 @@ $buttonRedHover: #E51E1C;
 $buttonRedActive: #D50E0C;
 $smallSpacing: 15px;
 $largeSpacing: 50px;
+$fontWhitney: 'Whitney SSm A', 'Whitney SSm B';
+$fontIdeal: 'Ideal Sans SSm A', 'Ideal Sans SSm B';
+$fontGotham: 'Gotham Cond SSm A', 'Gotham Cond SSm B';
 html {
   background: $white;
 }
 
 body {
   background-color: $white;
-  font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: $fontIdeal; 
   position: relative;
   color: $black;
   padding: 0px;
@@ -60,7 +63,7 @@ header {
     margin-top: 50px;
     font-size: 38px;
     font-weight: 700;
-    font-family: 'Source Sans Pro';
+    font-family: $fontIdeal;
     display: block;
     width: auto;
 
@@ -73,7 +76,7 @@ header {
       a {
         text-decoration: none;
         color: $textGrey1;
-        font-weight: 200;
+        font-weight: 300;
         line-height: 28px;
         padding-left: 3px;
         margin-bottom: 20px;
@@ -98,13 +101,13 @@ header {
 
   font-size: 18px;
   line-height: 27px;
-  font-weight: 200;
+  font-weight: 300;
   color: $textGrey3;
 
   a {
     text-decoration: none;
     color: $buttonBlue;
-    font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-family: $fontIdeal;
 
   }
   a:hover {
@@ -116,7 +119,7 @@ header {
     h2.title {
       font-size: 48px;
       font-weight: 700;
-      font-family: "Source Sans Pro", 'Helvetica Neue';
+      font-family: $fontIdeal, 'Helvetica Neue';
       margin-bottom: $largeSpacing;
       margin-top: 0px;
       color: $black;
@@ -136,7 +139,7 @@ header {
     background-color: $background;
     border-bottom: 1px solid $border;
     padding: 10px 20px;
-    font-family: "Source Sans Pro";
+    font-family: $fontIdeal;
     color: $textGrey1;
     font-size: 26px;
     font-weight: 500;
@@ -160,7 +163,7 @@ header {
     .popupButton {
       padding: 10px;
       color: $white;
-      font-family: 'Proxima Nova Regular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      font-family: $fontIdeal;
       font-size: 20px;
       font-weight: 500;
       text-align: center;
@@ -421,7 +424,7 @@ div.twoButtons {
   margin: 0px;
 
   h1, h2, h3, h4 {
-    font-family: 'Source Sans Pro';
+    font-family: $fontIdeal;
   }
 
   h1 {
